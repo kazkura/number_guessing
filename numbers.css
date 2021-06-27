@@ -1,0 +1,36 @@
+body{
+    background-color: white;    
+}
+
+.inner{
+    width:50%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 600px;
+}
+
+.inner_table{
+    width:50%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px;
+}
+
+div.button{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    color:blue;
+}
+
+p{
+    text-align: center;
+    color:black;
+}
+
+td.text{
+    color: green;
+    text-align: right;
+}
