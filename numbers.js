@@ -16,24 +16,31 @@ https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splas
         'use strict';
 
         // htmlのエレメント取得
-        const NumberInput = document.getElementById('NumberInput');
-        const JudgeButton = document.getElementById('JudgeButton');
-        const ResultText = document.getElementById('ResultText');
-        const HistoryText = document.getElementById('HistoryText');
-        const Restart = document.getElementById('Restart');
+        const NumberInput = document.querySelector('.NumberInput');
+        const JudgeButton = document.querySelector('.JudgeButton');
+        const ResultText = document.querySelector('.ResultText');
+        const HistoryText = document.querySelector('.HistoryText');
+        const Restart = document.querySelector('.ResetButton');
 
-        var RandomNumber; // 選択した乱数値
-        var TryCount; // 試行回数
-        var TryEnd; // 試行完了フラグ
+        let RandomNumber; // 選択した乱数値
+        let TryCount; // 試行回数
+        let TryEnd; // 試行完了フラグ
 
         // エレメントと変数の初期化
         init();
 
-        JudgeButton.onclick = JudegButtonOnClick;
-        NumberInput.onkeypress = NumberInputOnKeyPress;
+        JudgeButton.addEventListener('click', Judge);
+
+        // エンターキーが入力された場合も判定を実行する
+        // function(e) {}でもOK
+        NumberInput.addEventListener('keydown', (e) => {
+            if( e.key == "Enter"){
+                Judge();
+            }
+        });
 
         // 判定関数
-        function JudegButtonOnClick(){
+        function Judge(){
             if( !TryEnd ){
                 let value = Number(NumberInput.value);
 
@@ -70,12 +77,6 @@ https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splas
             NumberInput.value = "";
         }
 
-        // エンターキーが入力された場合も判定を実行する
-        function NumberInputOnKeyPress(e){
-            if( e.key == "Enter"){
-                JudegButtonOnClick();
-            }
-        }
 
         // 再スタートボタンの処理
         Restart.onclick = function(){

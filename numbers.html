@@ -19,32 +19,32 @@ https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splas
     </head>
     <body>
         <!-- タイトル -->
-        <h1 class="inner">数字当てゲーム</h1>
+        <h1 class="innerText">数字当てゲーム</h1>
 
         <!-- 説明文 -->
-        <p class="inner">
+        <p class="innerText">
             ランダムな1～100の数字が選ばれます。これを10回以内に当ててください。
         </p>
 
         <!-- 入力・ボタンなど配置 -->
-        <table class="inner_table">
+        <table class="innerTable">
             <tr>
                 <td class="text">数字：</td>
-                <td><input type="text" id="NumberInput" size="30px"></td>
-                <td class="button"><input type="button" value="判定" id="JudgeButton"></td>
+                <td><input type="text" class="NumberInput" size="30px"></td>
+                <td class="button"><input type="button" value="判定" class="JudgeButton"></td>
             </tr>
             <tr>
                 <td class="text">判定結果：</td>
-                <td><input type="text" id="ResultText"  size="30px" readonly></td>
+                <td><input type="text" class="ResultText"  size="30px" readonly></td>
             </tr>
             <tr>
                 <td class="text">履歴：</td>
-                <td><input type="text" id="HistoryText"  size="30px" readonly></td>
+                <td><input type="text" class="HistoryText"  size="30px" readonly></td>
             </tr>
         </table>
         <br>
-        <div class="button">
-            <input type="button" value="リセット" id="Restart">
+        <div class="innerText">
+            <input type="button" value="リセット" class="ResetButton">
         </div>
         <script src="numbers.js"></script>
     </body>

@@ -1,36 +1,28 @@
 body{
-    background-color: white;    
+    background-color: lightblue;    
 }
 
-.inner{
+.innerText{
     width:50%;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
     max-width: 600px;
-}
-
-.inner_table{
-    width:50%;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 400px;
-}
-
-div.button{
     text-align: center;
+}
+
+/* テーブル要素の位置関係を崩さないように表示する */
+.innerTable{
+    width:50%;
+    margin: 0 auto;
+    max-width: 400px;
+    min-width: 400px;
 }
 
 h1{
-    text-align: center;
-    color:blue;
-}
-
-p{
-    text-align: center;
-    color:black;
+    color:darkblue;
 }
 
 td.text{
-    color: green;
+    color: darkgreen;
     text-align: right;
+    font-weight: bold;
 }
