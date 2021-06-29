@@ -45,10 +45,10 @@ https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splas
                 let value = Number(NumberInput.value);
 
                 // 判定処理
-                if( !Number.isNaN(value)){
+                if( !Number.isNaN(value) && Number.isSafeInteger(value)){
                     // 範囲外か判定
                     if( value < 1 || value > 100){
-                        ResultText.value = "数字が範囲外です"
+                        ResultText.value = "数字が範囲外です";
                     }else{
                         if( value < RandomNumber ){
                             ResultText.value = "入力された数値より大きいです";
@@ -65,13 +65,13 @@ https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splas
                         }
 
                         // ゲームオーバー判定
-                        if( TryCount == 10 && TryEnd == false){
-                            ResultText.value = "ゲームオーバー（正解は："+String(RandomNumber)+")";
+                        if( TryCount === 10 && TryEnd === false){
+                            ResultText.value = `ゲームオーバー（正解は：${String(RandomNumber)})`;
                             TryEnd = true;
                         }
                     }
                 }else{
-                    ResultText.value = "数値を入力してください"
+                    ResultText.value = "整数を入力してください";
                 }    
             }
             NumberInput.value = "";
